@@ -96,12 +96,12 @@ export default function MapScreen() {
                   title={site.name}
                   description={site.address}
                >
-                  <Center bg="white" borderRadius={60} p={3 * zoomRatio} borderWidth={2 * zoomRatio} borderColor="black">
-                     <Icon name={"bus"} size={30 * zoomRatio} color="black" />
+                  <Center bg="#0388fc" borderRadius={60} p={3 * zoomRatio}>
+                     <Icon name={"train"} size={22 * zoomRatio} color="white" />
                   </Center>
                </Marker>
             ))}
-            {(zoomRatio > 0.14) && ubike.map((site) => (
+            {(zoomRatio > 0.2) && ubike.map((site) => (
                <Marker
                   coordinate={{
                      latitude: Number(site.lat),
@@ -111,11 +111,11 @@ export default function MapScreen() {
                   title={`${site.sna} ${site.sbi}/${site.bemp}`}
                   description={site.ar}
                >
-                  <ActionButton zoomRatio={zoomRatio} site={site} />
+                  <ActionButton zoomRatio={zoomRatio} site={site}/>
                </Marker>
             ))}
          </MapView>
-         {!onCurrentLocation && (
+         {/* {!onCurrentLocation && (
             <Box
                bg="white"
                borderRadius={60}
@@ -132,7 +132,7 @@ export default function MapScreen() {
                />
             </Box>
 
-         )}
+         )} */}
       </Box>
    );
 }
